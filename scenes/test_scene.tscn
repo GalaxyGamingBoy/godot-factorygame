@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6qrrvda347ri"]
+
+[ext_resource type="Texture2D" uid="uid://djo6u6br2ijls" path="res://assets/tile.png" id="1_073gf"]
+[ext_resource type="Script" path="res://scripts/cursor.gd" id="1_gjp4e"]
+[ext_resource type="Texture2D" uid="uid://cbn27bblubgup" path="res://assets/selected.png" id="3_ffyga"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_jiqd5"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Cursor" type="Node2D" parent="."]
+position = Vector2(32, 32)
+script = ExtResource("1_gjp4e")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
+texture = ExtResource("3_ffyga")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("3_jiqd5")
+
+[node name="Background" type="Sprite2D" parent="Camera2D"]
+z_index = -100
+texture_repeat = 2
+position = Vector2(576, 320)
+texture = ExtResource("1_073gf")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 768)
